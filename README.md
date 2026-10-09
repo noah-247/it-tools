@@ -35,14 +35,17 @@
 `wrangler.toml` 已經在 repo 裡了（純靜態託管，assets-only，不用寫 Worker 程式）：
 
 ```sh
-pnpm install
-VITE_TRACKER_ENABLED=false pnpm build   # 建置時關掉追蹤
+pnpm install --frozen-lockfile          # Node 18，pnpm 9
+BASE_URL=/ VITE_VERCEL_ENV=production VITE_TRACKER_ENABLED=false \
+  VITE_VERCEL_GIT_COMMIT_SHA=$(git rev-parse HEAD) pnpm build
 npx wrangler deploy
 ```
+
+`VITE_TRACKER_ENABLED=false` 是建置時關掉追蹤；`VITE_VERCEL_GIT_COMMIT_SHA` 會顯示在頁尾，方便對版本。
 
 ## 授權
 
 GPL-3.0 —— `LICENSE` 在 repo 根目錄。
 
 原始碼：https://github.com/noah-247/it-tools
-部署版本以 tag `a-deploy-1` 為準（tag 稍後建立）。
+部署版本以 tag `a-deploy-1` 為準。
