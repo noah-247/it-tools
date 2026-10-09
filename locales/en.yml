@@ -27,6 +27,13 @@ home:
     darkMode: 'Dark mode'
     lightMode: 'Light mode'
     mode: 'Toggle dark/light mode'
+footer:
+  unofficialDeployment: Unofficial deployment, not affiliated with it-tools.tech or the original author.
+  originalCopyright: © {year} {author} and contributors (original authors).
+  modifiedCopyright: © 2026 noah-247 (modifications).
+  noWarranty: Provided without any warranty.
+  license: This work is licensed under GPL-3.0.
+  sourceCode: Source code
 about:
   content: >
     # About IT-Tools
@@ -44,6 +51,11 @@ about:
     If you need a tool that is currently not present here, and you think can be useful, you are welcome to submit a feature request in the [issues section](https://github.com/CorentinTh/it-tools/issues/new/choose) in the GitHub repository.
 
     And if you found a bug, or something doesn't work as expected, please file a bug report in the [issues section](https://github.com/CorentinTh/it-tools/issues/new/choose) in the GitHub repository.
+
+  deploymentNotice: >
+    This is an unofficial deployment, not affiliated with it-tools.tech or the original author.
+    Based on CorentinTh/it-tools at commit d505845. In October 2026, noah-247 added Cloudflare Workers deployment settings and license notices.
+    Licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html). [Source code](https://github.com/noah-247/it-tools/tree/a-deploy-1).
 
 404:
   notFound: '404 Not Found'

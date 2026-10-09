@@ -5,5 +5,8 @@ useHead({ title: 'About - IT Tools' });
 </script>
 
 <template>
-  <c-markdown :markdown="$t('about.content')" mx-auto mt-50px max-w-600px />
+  <div mx-auto mt-50px max-w-600px>
+    <c-markdown :markdown="$t('about.content')" />
+    <c-markdown :markdown="$t('about.deploymentNotice')" />
+  </div>
 </template>

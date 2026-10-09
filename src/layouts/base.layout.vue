@@ -58,34 +58,6 @@ const tools = computed<ToolCategory[]>(() => [
         </div>
 
         <CollapsibleToolMenu :tools-by-category="tools" />
-
-        <div class="footer">
-          <div>
-            IT-Tools
-
-            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
-              v{{ version }}
-            </c-link>
-
-            <template v-if="commitSha && commitSha.length > 0">
-              -
-              <c-link
-                target="_blank"
-                rel="noopener"
-                type="primary"
-                :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`"
-              >
-                {{ commitSha }}
-              </c-link>
-            </template>
-          </div>
-          <div>
-            © {{ new Date().getFullYear() }}
-            <c-link target="_blank" rel="noopener" href="https://corentin.tech?utm_source=it-tools&utm_medium=footer">
-              Corentin Thomasset
-            </c-link>
-          </div>
-        </div>
       </div>
     </template>
 
@@ -137,6 +109,51 @@ const tools = computed<ToolCategory[]>(() => [
       </div>
       <slot />
     </template>
+
+    <template #footer>
+      <footer class="footer">
+        <div>{{ $t('footer.unofficialDeployment') }}</div>
+        <div class="footer-row">
+          <i18n-t keypath="footer.originalCopyright" tag="span" scope="global">
+            <template #year>
+              {{ new Date().getFullYear() }}
+            </template>
+            <template #author>
+              <c-link target="_blank" rel="noopener" href="https://corentin.tech?utm_source=it-tools&utm_medium=footer">
+                Corentin Thomasset
+              </c-link>
+            </template>
+          </i18n-t>
+          <span>{{ $t('footer.modifiedCopyright') }}</span>
+        </div>
+        <div class="footer-row">
+          <span>{{ $t('footer.noWarranty') }}</span>
+          <c-link target="_blank" rel="noopener" href="https://www.gnu.org/licenses/gpl-3.0.html">
+            {{ $t('footer.license') }}
+          </c-link>
+          <c-link target="_blank" rel="noopener" href="https://github.com/noah-247/it-tools/tree/a-deploy-1">
+            {{ $t('footer.sourceCode') }}
+          </c-link>
+          <span>
+            IT-Tools
+            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
+              v{{ version }}
+            </c-link>
+            <template v-if="commitSha && commitSha.length > 0">
+              -
+              <c-link
+                target="_blank"
+                rel="noopener"
+                type="primary"
+                :href="`https://github.com/noah-247/it-tools/tree/${config.app.lastCommitSha}`"
+              >
+                {{ commitSha }}
+              </c-link>
+            </template>
+          </span>
+        </div>
+      </footer>
+    </template>
   </MenuLayout>
 </template>
 
@@ -166,10 +183,20 @@ const tools = computed<ToolCategory[]>(() => [
 }
 
 .footer {
+  flex: none;
   text-align: center;
-  color: #838587;
-  margin-top: 20px;
-  padding: 20px 0;
+  color: v-bind('themeVars.textColor2');
+  border-top: 1px solid v-bind('themeVars.borderColor');
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 12px;
 }
 
 .sider-content {

@@ -56,6 +56,11 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       strategies: 'generateSW',
+      workbox: {
+        globPatterns: ['index.html', 'registerSW.js', 'assets/app-*.js', 'assets/index-*.css'],
+        globIgnores: ['**/*.map', '**/*.wasm', '**/*-worker-*.js'],
+        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+      },
       manifest: {
         name: 'IT Tools',
         description: 'Aggregated set of useful tools for developers.',
@@ -112,5 +117,10 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/app-[hash].js',
+      },
+    },
   },
 });

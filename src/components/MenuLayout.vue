@@ -7,7 +7,7 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
 </script>
 
 <template>
-  <n-layout has-sider>
+  <n-layout has-sider class="menu-layout-container">
     <n-layout-sider
       bordered
       collapse-mode="width"
@@ -20,10 +20,13 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
     >
       <slot name="sider" />
     </n-layout-sider>
-    <n-layout class="content">
-      <slot name="content" />
-      <div v-show="isSmallScreen && !isMenuCollapsed" class="overlay" @click="isMenuCollapsed = true" />
-    </n-layout>
+    <div class="main-column">
+      <n-layout class="content">
+        <slot name="content" />
+        <div v-show="isSmallScreen && !isMenuCollapsed" class="overlay" @click="isMenuCollapsed = true" />
+      </n-layout>
+      <slot name="footer" />
+    </div>
   </n-layout>
 </template>
 
@@ -38,14 +41,24 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
   cursor: pointer;
 }
 
+.main-column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
 .content {
+  flex: 1;
+  min-height: 0;
   // background-color: #f1f5f9;
   ::v-deep(.n-layout-scroll-container) {
     padding: 26px;
   }
 }
 
-.n-layout {
+.menu-layout-container {
   height: 100vh;
 }
 </style>

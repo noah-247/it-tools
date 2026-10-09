@@ -27,6 +27,13 @@ home:
     darkMode: '深色模式'
     lightMode: '浅色模式'
     mode: '颜色模式'
+footer:
+  unofficialDeployment: 非官方部署，与 it-tools.tech 及原作者无关。
+  originalCopyright: © {year} {author} 及贡献者（原作者）。
+  modifiedCopyright: © 2026 noah-247（修改部分）。
+  noWarranty: 本作品不提供任何担保。
+  license: 本作品依 GPL-3.0 授权。
+  sourceCode: 源代码
 about:
   content: >
     # 关于 IT-Tools
@@ -44,6 +51,11 @@ about:
     如果目前这里没有您需要的工具，并且您认为它可能有用，欢迎在 GitHub 仓库的 [issues](https://github.com/CorentinTh/it-tools/issues/new/choose) 中提交新增功能的请求。
 
     如果您发现了 Bug，或者某些功能未能按预期工作，请在 GitHub 仓库的 [issues](https://github.com/CorentinTh/it-tools/issues/new/choose) 中提交错误报告。
+
+  deploymentNotice: >
+    这是非官方部署，与 it-tools.tech 及原作者无关。
+    基于 CorentinTh/it-tools 的 d505845。2026-10 由 noah-247 修改：新增 Cloudflare Workers 部署设置与授权声明。
+    依 [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html) 授权。[源代码](https://github.com/noah-247/it-tools/tree/a-deploy-1)。
 
 404:
   notFound: '404 页面不存在'

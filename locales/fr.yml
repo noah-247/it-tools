@@ -26,6 +26,13 @@ home:
     darkMode: 'Mode sombre'
     lightMode: 'Mode clair'
     mode: 'Basculer le mode sombre/clair'
+footer:
+  unofficialDeployment: Déploiement non officiel, sans lien avec it-tools.tech ni avec l'auteur original.
+  originalCopyright: © {year} {author} et les contributeurs (auteurs originaux).
+  modifiedCopyright: © 2026 noah-247 (modifications).
+  noWarranty: Cette œuvre est fournie sans aucune garantie.
+  license: Cette œuvre est sous licence GPL-3.0.
+  sourceCode: Code source
 about:
   content: >
     # À propos de IT-Tools
@@ -41,6 +48,11 @@ about:
     ## Vous avez trouvé un bug ? Un outil manque ?
 
     Si vous avez besoin d'un outil qui n'est pas encore présent ici, et que vous pensez qu'il peut être utile, vous êtes invité à soumettre une demande de fonctionnalité dans la [section issue](https://github.com/CorentinTh/it-tools/issues/new/choose) du dépôt GitHub.
+
+  deploymentNotice: >
+    Ce déploiement non officiel est sans lien avec it-tools.tech ni avec l'auteur original.
+    Il repose sur CorentinTh/it-tools au commit d505845. En octobre 2026, noah-247 a ajouté la configuration de déploiement Cloudflare Workers et les mentions de licence.
+    Licence [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html). [Code source](https://github.com/noah-247/it-tools/tree/a-deploy-1).
 
 404:
   notFound: '404 Not Found'
