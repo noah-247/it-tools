@@ -57,7 +57,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       strategies: 'generateSW',
       workbox: {
-        globPatterns: ['index.html', 'registerSW.js', 'assets/app-*.js', 'assets/index-*.css'],
+        globPatterns: ['index.html', 'registerSW.js', 'assets/app-*.js', 'assets/index-*.css', 'fonts/*.woff2'],
         globIgnores: ['**/*.map', '**/*.wasm', '**/*-worker-*.js'],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
       },
@@ -68,8 +68,8 @@ export default defineConfig({
         lang: 'fr-FR',
         start_url: `${baseUrl}?utm_source=pwa&utm_medium=pwa`,
         orientation: 'any',
-        theme_color: '#18a058',
-        background_color: '#f1f5f9',
+        theme_color: '#03050c',
+        background_color: '#03050c',
         icons: [
           {
             src: '/favicon-16x16.png',

@@ -38,21 +38,21 @@ export const { themes: appThemes, useTheme: useAppTheme } = defineThemes({
     },
   },
   dark: {
-    background: '#1e1e1e',
+    background: '#0b0e1a',
     text: {
-      baseColor: '#ffffffd1',
-      mutedColor: '#ffffff80',
+      baseColor: '#f5f7ff',
+      mutedColor: 'rgba(245, 247, 255, 0.68)',
     },
     default: {
-      color: 'rgba(255, 255, 255, 0.08)',
-      colorHover: 'rgba(255, 255, 255, 0.12)',
-      colorPressed: 'rgba(255, 255, 255, 0.24)',
+      color: 'rgba(167, 139, 250, 0.08)',
+      colorHover: 'rgba(167, 139, 250, 0.14)',
+      colorPressed: 'rgba(167, 139, 250, 0.22)',
     },
     primary: {
-      color: '#1ea54c',
-      colorHover: '#36AD6A',
-      colorPressed: '#0C7A43',
-      colorFaded: '#18a0582f',
+      color: '#a78bfa',
+      colorHover: '#c4b5fd',
+      colorPressed: '#8b5cf6',
+      colorFaded: '#a78bfa1a',
     },
     warning: {
       color: '#f59e0b',

@@ -5,7 +5,6 @@ import { RouterLink } from 'vue-router';
 import { Heart, Home2, Menu2 } from '@vicons/tabler';
 
 import { storeToRefs } from 'pinia';
-import HeroGradient from '../assets/hero-gradient.svg?component';
 import MenuLayout from '../components/MenuLayout.vue';
 import NavbarButtons from '../components/NavbarButtons.vue';
 import { useStyleStore } from '@/stores/style.store';
@@ -36,13 +35,11 @@ const tools = computed<ToolCategory[]>(() => [
   <MenuLayout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
     <template #sider>
       <RouterLink to="/" class="hero-wrapper">
-        <HeroGradient class="gradient" />
         <div class="text-wrapper">
           <div class="title">
-            IT - TOOLS
+            IT-TOOLS<span class="status-dot" aria-hidden="true" />
           </div>
-          <div class="divider" />
-          <div class="subtitle">
+          <div class="subtitle voidez-eyebrow">
             {{ $t('home.subtitle') }}
           </div>
         </div>
@@ -62,7 +59,7 @@ const tools = computed<ToolCategory[]>(() => [
     </template>
 
     <template #content>
-      <div flex items-center justify-center gap-2>
+      <header class="voidez-header" flex items-center justify-center>
         <c-button
           circle
           variant="text"
@@ -94,7 +91,6 @@ const tools = computed<ToolCategory[]>(() => [
 
         <c-tooltip position="bottom" :tooltip="$t('home.support')">
           <c-button
-            round
             href="https://www.buymeacoffee.com/cthmsst"
             rel="noopener"
             target="_blank"
@@ -106,12 +102,15 @@ const tools = computed<ToolCategory[]>(() => [
             <NIcon v-if="!styleStore.isSmallScreen" :component="Heart" ml-2 />
           </c-button>
         </c-tooltip>
-      </div>
+      </header>
       <slot />
     </template>
 
     <template #footer>
-      <footer class="footer">
+      <footer class="footer voidez-footer">
+        <div class="voidez-eyebrow">
+          Legal
+        </div>
         <div>{{ $t('footer.unofficialDeployment') }}</div>
         <div class="footer-row">
           <i18n-t keypath="footer.originalCopyright" tag="span" scope="global">
@@ -131,26 +130,29 @@ const tools = computed<ToolCategory[]>(() => [
           <c-link target="_blank" rel="noopener" href="https://www.gnu.org/licenses/gpl-3.0.html">
             {{ $t('footer.license') }}
           </c-link>
-          <c-link target="_blank" rel="noopener" href="https://github.com/noah-247/it-tools/tree/a-deploy-2">
+          <c-link target="_blank" rel="noopener" href="https://github.com/noah-247/it-tools/tree/a-deploy-3">
             {{ $t('footer.sourceCode') }}
           </c-link>
+        </div>
+        <div class="footer-row footer-meta">
           <span>
             IT-Tools
             <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
               v{{ version }}
             </c-link>
-            <template v-if="commitSha && commitSha.length > 0">
-              -
-              <c-link
-                target="_blank"
-                rel="noopener"
-                type="primary"
-                :href="`https://github.com/noah-247/it-tools/tree/${config.app.lastCommitSha}`"
-              >
-                {{ commitSha }}
-              </c-link>
-            </template>
+            -
+            <c-link
+              target="_blank"
+              rel="noopener"
+              type="primary"
+              :href="`https://github.com/noah-247/it-tools/tree/${config.app.lastCommitSha}`"
+            >
+              {{ commitSha }}
+            </c-link>
           </span>
+          <c-link target="_blank" rel="noopener" href="https://voidez.com">
+            voidez.com ↗
+          </c-link>
         </div>
       </footer>
     </template>
@@ -158,50 +160,35 @@ const tools = computed<ToolCategory[]>(() => [
 </template>
 
 <style lang="less" scoped>
-// ::v-deep(.n-layout-scroll-container) {
-//     @percent: 4%;
-//     @position: 25px;
-//     @size: 50px;
-//     @color: #eeeeee25;
-//     background-image: radial-gradient(@color @percent, transparent @percent),
-//         radial-gradient(@color @percent, transparent @percent);
-//     background-position: 0 0, @position @position;
-//     background-size: @size @size;
-// }
-
-.support-button {
-  background: rgb(37, 99, 108);
-  background: linear-gradient(48deg, rgba(37, 99, 108, 1) 0%, rgba(59, 149, 111, 1) 60%, rgba(20, 160, 88, 1) 100%);
-  color: #fff !important;
-  transition: padding ease 0.2s !important;
-
-  &:hover {
-    color: #fff;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-
 .footer {
   flex: none;
   text-align: center;
   color: v-bind('themeVars.textColor2');
   border-top: 1px solid v-bind('themeVars.borderColor');
-  padding: 8px 12px;
+  padding: 24px clamp(16px, 3vw, 48px);
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.75;
+  text-transform: none;
+  overflow-wrap: anywhere;
+
+  > .voidez-eyebrow {
+    margin-bottom: 12px;
+  }
 }
 
 .footer-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  column-gap: 12px;
+  gap: 4px 16px;
+}
+
+.footer-meta {
+  margin-top: 12px;
 }
 
 .sider-content {
-  padding-top: 160px;
-  padding-bottom: 200px;
+  padding: 176px 12px 48px;
 }
 
 .hero-wrapper {
@@ -211,34 +198,37 @@ const tools = computed<ToolCategory[]>(() => [
   width: 100%;
   z-index: 10;
   overflow: hidden;
-
-  .gradient {
-    margin-top: -65px;
-  }
+  min-height: 152px;
+  padding: 36px 24px 24px;
+  background: #0b0e1a;
+  text-decoration: none;
+  border-bottom: 1px solid #252338;
 
   .text-wrapper {
-    position: absolute;
-    left: 0;
     width: 100%;
-    text-align: center;
-    top: 16px;
-    color: #fff;
+    color: #f5f7ff;
 
     .title {
-      font-size: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
       font-weight: 600;
+      letter-spacing: 0.18em;
     }
 
-    .divider {
-      width: 50px;
-      height: 2px;
-      border-radius: 4px;
-      background-color: v-bind('themeVars.primaryColor');
-      margin: 0 auto 5px;
+    .status-dot {
+      flex: none;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #a78bfa;
     }
 
     .subtitle {
-      font-size: 16px;
+      margin-top: 16px;
+      color: rgba(245, 247, 255, 0.68);
+      letter-spacing: 0.12em;
     }
   }
 }

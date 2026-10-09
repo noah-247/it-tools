@@ -2,11 +2,11 @@ import { defineThemes } from '../theme/theme.models';
 
 export const { useTheme } = defineThemes({
   dark: {
-    backgroundColor: '#333333',
-    borderColor: '#333333',
+    backgroundColor: '#101321',
+    borderColor: '#252338',
 
     focus: {
-      backgroundColor: '#1ea54c1a',
+      backgroundColor: '#a78bfa1a',
     },
   },
   light: {

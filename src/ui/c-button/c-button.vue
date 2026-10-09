@@ -77,7 +77,7 @@ const size = computed(() => theme.value.size[sizeName.value]);
   font-weight: 400;
   color: v-bind('variantTheme.textColor');
   padding: 0 14px;
-  border-radius: 4px;
+  border-radius: 2px;
   transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
 
   background-color: v-bind('variantTheme.backgroundColor');

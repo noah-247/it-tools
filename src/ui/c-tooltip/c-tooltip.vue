@@ -17,7 +17,7 @@ const isTargetHovered = useElementHover(targetRef);
 
     <div
       v-if="tooltip || $slots.tooltip"
-      class="absolute z-10 whitespace-nowrap rounded bg-black px-12px py-6px text-sm text-white shadow-lg transition transition transition-duration-0.2s"
+      class="absolute z-10 whitespace-nowrap border border-void-line rounded-2px border-solid bg-#0b0e1a px-12px py-6px text-sm text-void-ink shadow-lg transition transition transition-duration-0.2s"
       :class="{
         'op-0 scale-0': isTargetHovered === false,
         'op-100 scale-100': isTargetHovered,

@@ -22,17 +22,16 @@ const { icon, title } = toRefs(props);
 
 <style lang="less" scoped>
 .colored-card {
-  background: rgb(37, 99, 108);
-  background: linear-gradient(48deg, rgba(37, 99, 108, 1) 0%, rgba(59, 149, 111, 1) 60%, rgba(20, 160, 88, 1) 100%);
-  color: #fff;
-  border: none;
+  background: linear-gradient(135deg, #19152e 0%, #0e1427 65%, #0b0e1a 100%);
+  color: #f5f7ff;
+  border: 1px solid #252338;
 
   .icon {
     opacity: 0.7;
   }
 
   .title {
-    color: #fff;
+    color: #f5f7ff;
 
     margin: 5px 0;
   }
@@ -49,7 +48,7 @@ const { icon, title } = toRefs(props);
       transition: color ease 0.2s;
 
       &:hover {
-        color: rgb(20, 20, 20);
+        color: #c4b5fd;
       }
     }
   }
