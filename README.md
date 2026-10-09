@@ -10,7 +10,9 @@
 
 ## 直接開來用 👇
 
-**https://noah-it-tools.pagi.workers.dev**
+**https://ittools.voidez.com**（正式域名）
+
+備用：https://noah-it-tools.pagi.workers.dev（workers.dev 預覽網址，功能一樣）
 
 86 個開發者小工具，全部在瀏覽器裡運算。免註冊、免登入，打開就有。
 
@@ -48,4 +50,4 @@ npx wrangler deploy
 GPL-3.0 —— `LICENSE` 在 repo 根目錄。
 
 原始碼：https://github.com/noah-247/it-tools
-部署版本以 tag `a-deploy-1` 為準。
+部署版本以 tag `a-deploy-4` 為準。

@@ -130,7 +130,7 @@ const tools = computed<ToolCategory[]>(() => [
           <c-link target="_blank" rel="noopener" href="https://www.gnu.org/licenses/gpl-3.0.html">
             {{ $t('footer.license') }}
           </c-link>
-          <c-link target="_blank" rel="noopener" href="https://github.com/noah-247/it-tools/tree/a-deploy-3">
+          <c-link target="_blank" rel="noopener" href="https://github.com/noah-247/it-tools/tree/a-deploy-4">
             {{ $t('footer.sourceCode') }}
           </c-link>
         </div>
