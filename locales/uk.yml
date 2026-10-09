@@ -27,6 +27,13 @@ home:
     darkMode: 'Темний режим'
     lightMode: 'Світлий режим'
     mode: 'Перемикання темного/світлого режиму'
+footer:
+  unofficialDeployment: Неофіційне розгортання, не пов’язане з it-tools.tech чи оригінальним автором.
+  originalCopyright: © {year} {author} та учасники (оригінальні автори).
+  modifiedCopyright: © 2026 noah-247 (зміни).
+  noWarranty: Надається без будь-яких гарантій.
+  license: Цей твір ліцензовано на умовах GPL-3.0.
+  sourceCode: Вихідний код
 about:
   content: >
     # Про IT-Tools

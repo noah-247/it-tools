@@ -34,6 +34,13 @@ home:
     darkMode: Dunkelmodus
     lightMode: Hellmodus
     mode: Wechseln zwischen dunklem/hellem Modus
+footer:
+  unofficialDeployment: Inoffizielle Bereitstellung, nicht mit it-tools.tech oder dem ursprünglichen Autor verbunden.
+  originalCopyright: © {year} {author} und Mitwirkende (ursprüngliche Autoren).
+  modifiedCopyright: © 2026 noah-247 (Änderungen).
+  noWarranty: Ohne jegliche Gewährleistung bereitgestellt.
+  license: Dieses Werk steht unter der GPL-3.0-Lizenz.
+  sourceCode: Quellcode
 about:
   content: >
     # Über IT-Tools

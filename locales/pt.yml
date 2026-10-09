@@ -27,6 +27,13 @@ home:
     darkMode: 'Modo Escuro'
     lightMode: 'Modo Claro'
     mode: 'Trocar modo escuro/claro'
+footer:
+  unofficialDeployment: Implantação não oficial, sem vínculo com it-tools.tech ou com o autor original.
+  originalCopyright: © {year} {author} e colaboradores (autores originais).
+  modifiedCopyright: © 2026 noah-247 (modificações).
+  noWarranty: Fornecido sem qualquer garantia.
+  license: Esta obra está licenciada sob a GPL-3.0.
+  sourceCode: Código-fonte
 about:
   content: >
     # Sobre o IT-Tools

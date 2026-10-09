@@ -27,6 +27,13 @@ home:
     darkMode: 'Chế độ tối'
     lightMode: 'Chế độ sáng'
     mode: 'Chuyển đổi chế độ tối/sáng'
+footer:
+  unofficialDeployment: Bản triển khai không chính thức, không liên kết với it-tools.tech hay tác giả gốc.
+  originalCopyright: © {year} {author} và những người đóng góp (các tác giả gốc).
+  modifiedCopyright: © 2026 noah-247 (các sửa đổi).
+  noWarranty: Được cung cấp không kèm bất kỳ bảo đảm nào.
+  license: Tác phẩm này được cấp phép theo GPL-3.0.
+  sourceCode: Mã nguồn
 about:
   content: >
     # Về IT-Tools

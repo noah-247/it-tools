@@ -27,6 +27,13 @@ home:
     darkMode: 'Mørk modus'
     lightMode: 'Lys modus'
     mode: 'Veksle mørk/lys modus'
+footer:
+  unofficialDeployment: Uoffisiell utrulling, ikke tilknyttet it-tools.tech eller den opprinnelige forfatteren.
+  originalCopyright: © {year} {author} og bidragsytere (opprinnelige forfattere).
+  modifiedCopyright: © 2026 noah-247 (endringer).
+  noWarranty: Leveres uten noen form for garanti.
+  license: Dette verket er lisensiert under GPL-3.0.
+  sourceCode: Kildekode
 about:
   content: >
     # Om IT-Tools
