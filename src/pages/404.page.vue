@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
 
-useHead({ title: 'Page not found - IT Tools' });
+useHead({
+  title: 'Page not found - IT Tools',
+  meta: [{ name: 'robots', content: 'noindex' }],
+});
 </script>
 
 <template>

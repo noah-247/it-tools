@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { IconDragDrop, IconHeart } from '@tabler/icons-vue';
 import { useHead } from '@vueuse/head';
+import type { HeadObject } from '@vueuse/head';
 import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import Draggable from 'vuedraggable';
 import ColoredCard from '../components/ColoredCard.vue';
 import ToolCard from '../components/ToolCard.vue';
@@ -9,8 +11,14 @@ import { useToolStore } from '@/tools/tools.store';
 import { config } from '@/config';
 
 const toolStore = useToolStore();
+const route = useRoute();
 
-useHead({ title: 'IT Tools - Handy online tools for developers' });
+const head = computed<HeadObject>(() => ({
+  title: 'IT Tools - Handy online tools for developers',
+  link: [{ rel: 'canonical', href: `https://ittools.voidez.com${route.path}` }],
+  meta: [{ property: 'og:url', content: `https://ittools.voidez.com${route.path}` }],
+}));
+useHead(head);
 const { t } = useI18n();
 
 const favoriteTools = computed(() => toolStore.favoriteTools);

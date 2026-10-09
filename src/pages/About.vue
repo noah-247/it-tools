@@ -1,7 +1,16 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
+import type { HeadObject } from '@vueuse/head';
+import { useRoute } from 'vue-router';
 
-useHead({ title: 'About - IT Tools' });
+const route = useRoute();
+
+const head = computed<HeadObject>(() => ({
+  title: 'About - IT Tools',
+  link: [{ rel: 'canonical', href: `https://ittools.voidez.com${route.path}` }],
+  meta: [{ property: 'og:url', content: `https://ittools.voidez.com${route.path}` }],
+}));
+useHead(head);
 </script>
 
 <template>

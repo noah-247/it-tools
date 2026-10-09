@@ -11,7 +11,12 @@ const route = useRoute();
 
 const head = computed<HeadObject>(() => ({
   title: `${route.meta.name} - IT Tools`,
+  link: [{ rel: 'canonical', href: `https://ittools.voidez.com${route.path}` }],
   meta: [
+    {
+      property: 'og:url',
+      content: `https://ittools.voidez.com${route.path}`,
+    },
     {
       name: 'description',
       content: route.meta?.description as string,
